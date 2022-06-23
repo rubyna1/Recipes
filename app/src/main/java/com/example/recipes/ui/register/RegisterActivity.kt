@@ -44,24 +44,23 @@ class RegisterActivity : DaggerAppCompatActivity() {
                 mAuth?.createUserWithEmailAndPassword(
                     activity_register_email_edit_text.text.toString(),
                     activity_register_password_edit_text.text.toString()
-                )
-                    ?.addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            activity_register_progress_bar.visibility = View.GONE
-                            activity_register_email_edit_text.text.clear()
-                            activity_register_email_edit_text.clearFocus()
-                            activity_register_password_edit_text.text.clear()
-                            activity_register_password_edit_text.clearFocus()
-                            val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-                            startActivity(intent)
-                        } else {
-                            activity_register_progress_bar.visibility = View.GONE
-                            Toast.makeText(
-                                baseContext, "${task.exception?.message}!!!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                )?.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        activity_register_progress_bar.visibility = View.GONE
+                        activity_register_email_edit_text.text.clear()
+                        activity_register_email_edit_text.clearFocus()
+                        activity_register_password_edit_text.text.clear()
+                        activity_register_password_edit_text.clearFocus()
+                        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        activity_register_progress_bar.visibility = View.GONE
+                        Toast.makeText(
+                            baseContext, "${task.exception?.message}!!!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
+                }
             }
         }
     }

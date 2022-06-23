@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_toStartOf="@+id/fragment_recipe_logout_image_view"
-            android:text="Recipes"
+            android:text="@string/recipes"
             android:layout_centerVertical="true"
             android:textAlignment="center"
             android:textColor="@color/white"

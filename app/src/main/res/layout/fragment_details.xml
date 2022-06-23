@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textAlignment="center"
-            android:text="Details"
+            android:text="@string/details"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -97,127 +97,11 @@
                 android:text="@string/ingredients"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view1"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/fragment_details_ingredients_and_mesure_view"
                 android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/fragment_details_ingredients_text_view20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:textSize="16sp" />
+                android:layout_width="wrap_content">
+            </RelativeLayout>
         </LinearLayout>
 
     </ScrollView>

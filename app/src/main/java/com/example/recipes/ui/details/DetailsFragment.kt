@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
+import android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.recipes.R
+import com.example.recipes.entity.MealModel
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_details.*
 import javax.inject.Inject
@@ -19,6 +23,7 @@ class DetailsFragment : DaggerFragment() {
     @Inject
     lateinit var detailsViewModel: DetailsViewModel
     private var mealId: String? = null
+    private val ingredientTextView = arrayOfNulls<TextView>(20)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,88 +64,79 @@ class DetailsFragment : DaggerFragment() {
                 if (!it.meals[0].strInstructions.isNullOrEmpty()) {
                     fragment_details_instructions_text_view.text = it.meals[0].strInstructions
                 }
-                if (!it.meals[0].strIngredient1.isNullOrEmpty() && !it.meals[0].strMeasure1.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view1.text =
-                        it.meals[0].strIngredient1 + ":" + it.meals[0].strMeasure1
-                }
-                if (!it.meals[0].strIngredient2.isNullOrEmpty() && !it.meals[0].strMeasure2.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view2.text =
-                        it.meals[0].strIngredient2 + ":" + it.meals[0].strMeasure2
-                }
-                if (!it.meals[0].strIngredient3.isNullOrEmpty() && !it.meals[0].strMeasure3.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view3.text =
-                        it.meals[0].strIngredient3 + ":" + it.meals[0].strMeasure3
-                }
-                if (!it.meals[0].strIngredient4.isNullOrEmpty() && !it.meals[0].strMeasure4.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view4.text =
-                        it.meals[0].strIngredient4 + ":" + it.meals[0].strMeasure4
-                }
-                if (!it.meals[0].strIngredient5.isNullOrEmpty() && !it.meals[0].strMeasure5.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view5.text =
-                        it.meals[0].strIngredient5 + ":" + it.meals[0].strMeasure5
-                }
-                if (!it.meals[0].strIngredient6.isNullOrEmpty() && !it.meals[0].strMeasure6.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view6.text =
-                        it.meals[0].strIngredient6 + ":" + it.meals[0].strMeasure6
-                }
-                if (!it.meals[0].strIngredient7.isNullOrEmpty() && !it.meals[0].strMeasure7.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view7.text =
-                        it.meals[0].strIngredient7 + ":" + it.meals[0].strMeasure7
-                }
-                if (!it.meals[0].strIngredient8.isNullOrEmpty() && !it.meals[0].strMeasure8.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view8.text =
-                        it.meals[0].strIngredient8 + ":" + it.meals[0].strMeasure8
-                }
-                if (!it.meals[0].strIngredient9.isNullOrEmpty() && !it.meals[0].strMeasure9.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view9.text =
-                        it.meals[0].strIngredient9 + ":" + it.meals[0].strMeasure9
-                }
-                if (!it.meals[0].strIngredient10.isNullOrEmpty() && !it.meals[0].strMeasure10.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view10.text =
-                        it.meals[0].strIngredient10 + ":" + it.meals[0].strMeasure10
-                }
-                if (!it.meals[0].strIngredient11.isNullOrEmpty() && !it.meals[0].strMeasure11.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view11.text =
-                        it.meals[0].strIngredient11 + ":" + it.meals[0].strMeasure11
-                }
-                if (!it.meals[0].strIngredient12.isNullOrEmpty() && !it.meals[0].strMeasure12.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view12.text =
-                        it.meals[0].strIngredient12 + ":" + it.meals[0].strMeasure12
-                }
-                if (!it.meals[0].strIngredient13.isNullOrEmpty() && !it.meals[0].strMeasure13.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view13.text =
-                        it.meals[0].strIngredient13 + ":" + it.meals[0].strMeasure13
-                }
-                if (!it.meals[0].strIngredient14.isNullOrEmpty() && !it.meals[0].strMeasure14.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view14.text =
-                        it.meals[0].strIngredient14 + ":" + it.meals[0].strMeasure14
-                }
-                if (!it.meals[0].strIngredient15.isNullOrEmpty() && !it.meals[0].strMeasure15.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view15.text =
-                        it.meals[0].strIngredient15 + ":" + it.meals[0].strMeasure15
-                }
-                if (!it.meals[0].strIngredient16.isNullOrEmpty() && !it.meals[0].strMeasure16.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view16.text =
-                        it.meals[0].strIngredient16 + ":" + it.meals[0].strMeasure16
-                }
-                if (!it.meals[0].strIngredient17.isNullOrEmpty() && !it.meals[0].strMeasure17.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view17.text =
-                        it.meals[0].strIngredient17 + ":" + it.meals[0].strMeasure17
-                }
-                if (!it.meals[0].strIngredient18.isNullOrEmpty() && !it.meals[0].strMeasure18.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view18.text =
-                        it.meals[0].strIngredient18 + ":" + it.meals[0].strMeasure18
-                }
-                if (!it.meals[0].strIngredient19.isNullOrEmpty() && !it.meals[0].strMeasure19.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view19.text =
-                        it.meals[0].strIngredient19 + ":" + it.meals[0].strMeasure19
-                }
-                if (!it.meals[0].strIngredient20.isNullOrEmpty() && !it.meals[0].strMeasure20.isNullOrEmpty()) {
-                    fragment_details_ingredients_text_view20.text =
-                        it.meals[0].strIngredient20 + ":" + it.meals[0].strMeasure20
+                val ingredientsList = getIngredientsList(it)
+                val measurementList = getMeasurementList(it)
+                for (i in 0 until ingredientsList.size) {
+                    if (!ingredientsList[i].isNullOrEmpty() && !measurementList[i].isNullOrEmpty()
+                    ) {
+                        ingredientTextView[i] = TextView(context)
+                        val params = RelativeLayout.LayoutParams(
+                            WRAP_CONTENT, WRAP_CONTENT
+                        )
+                        params.leftMargin = 50
+                        params.topMargin = i * 50
+                        ingredientTextView[i]?.text = ingredientsList[i] + ":" + measurementList[i]
+                        ingredientTextView[i]!!.textSize = 16f
+                        ingredientTextView[i]!!.setPadding(20, 50, 20, 50)
+                        ingredientTextView[i]!!.setTextColor(resources.getColor(R.color.gray))
+                        ingredientTextView[i]!!.layoutParams = params
+                        fragment_details_ingredients_and_mesure_view.addView(ingredientTextView[i])
+                    } else {
+                        break
+                    }
                 }
             }
         })
+    }
+
+    private fun getIngredientsList(model: MealModel): MutableList<String?> {
+        return mutableListOf(
+            model.meals[0].strIngredient1,
+            model.meals[0].strIngredient2,
+            model.meals[0].strIngredient3,
+            model.meals[0].strIngredient4,
+            model.meals[0].strIngredient5,
+            model.meals[0].strIngredient6,
+            model.meals[0].strIngredient7,
+            model.meals[0].strIngredient8,
+            model.meals[0].strIngredient9,
+            model.meals[0].strIngredient10,
+            model.meals[0].strIngredient11,
+            model.meals[0].strIngredient12,
+            model.meals[0].strIngredient13,
+            model.meals[0].strIngredient14,
+            model.meals[0].strIngredient15,
+            model.meals[0].strIngredient16,
+            model.meals[0].strIngredient17,
+            model.meals[0].strIngredient18,
+            model.meals[0].strIngredient19,
+            model.meals[0].strIngredient10
+        )
+    }
+
+    private fun getMeasurementList(model: MealModel): MutableList<String?> {
+        return mutableListOf(
+            model.meals[0].strMeasure1,
+            model.meals[0].strMeasure2,
+            model.meals[0].strMeasure3,
+            model.meals[0].strMeasure4,
+            model.meals[0].strMeasure5,
+            model.meals[0].strMeasure6,
+            model.meals[0].strMeasure7,
+            model.meals[0].strMeasure8,
+            model.meals[0].strMeasure9,
+            model.meals[0].strMeasure10,
+            model.meals[0].strMeasure11,
+            model.meals[0].strMeasure12,
+            model.meals[0].strMeasure13,
+            model.meals[0].strMeasure14,
+            model.meals[0].strMeasure15,
+            model.meals[0].strMeasure16,
+            model.meals[0].strMeasure17,
+            model.meals[0].strMeasure18,
+            model.meals[0].strMeasure19,
+            model.meals[0].strMeasure20
+        )
     }
 
     companion object {

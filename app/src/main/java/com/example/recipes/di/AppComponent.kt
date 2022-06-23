@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [(AndroidSupportInjectionModule::class), (ActivityBindingModule::class), (FragmentBindingModule::class),
-        (ApiModule::class),(ApplicationBindingModule::class)]
+        (ApiModule::class), (ApplicationBindingModule::class)]
 )
 interface AppComponent : AndroidInjector<Recipes> {
     @Component.Builder
