@@ -7,6 +7,7 @@
 * Dagger
 * Retrofit
 * Coroutines
+* Firebase Auth
 
 Used design pattern
 * MVVM
